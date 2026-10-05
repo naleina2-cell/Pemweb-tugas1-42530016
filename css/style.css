@@ -1,32 +1,38 @@
-*, *::before, *::after {
+/* RESET */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 1. WARNA DAN TIPOGRAFI */
+/* COLORS AND FONTS */
 :root {
   --background: #fffaf6;
   --surface: #fffdfb;
   --blush: #f2dedb;
   --cream: #f5ece3;
   --rose: #e3b9b5;
+
   --text: #3e2c27;
   --muted: #705951;
   --primary: #795044;
   --primary-dark: #54372e;
   --border: #dcc7bc;
+
   --font-body: Arial, Helvetica, sans-serif;
   --font-heading: Georgia, "Times New Roman", serif;
   --radius: 14px;
 }
 
+/* BASE */
 body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.75;
   color: var(--text);
-  background: var(--background);
+  background-color: var(--background);
   overflow-wrap: anywhere;
 }
 
@@ -54,69 +60,63 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.2;
   text-wrap: balance;
 }
 
 h1 {
+  margin-bottom: 24px;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   letter-spacing: -0.035em;
-  margin-bottom: 24px;
 }
 
 h2 {
+  margin-bottom: 20px;
   font-size: clamp(2rem, 3vw, 3rem);
   letter-spacing: -0.025em;
-  margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 1.5rem;
   margin-bottom: 12px;
+  font-size: 1.5rem;
 }
 
 p {
   margin-bottom: 16px;
 }
 
-::selection {
-  background: var(--rose);
-  color: var(--text);
-}
-
-/* 2. KONTAINER DAN BAGIAN HALAMAN */
-/* Dasar tampilan HP, tanpa media query */
 .container {
   width: calc(100% - 32px);
+  max-width: 1120px;
   margin-inline: auto;
 }
 
 .section {
-  padding-block: 56px;
+  padding: 56px 0;
   scroll-margin-top: 24px;
 }
 
 .section-alt {
-  background: var(--blush);
+  background-color: var(--blush);
 }
 
 .eyebrow {
+  margin-bottom: 16px;
+  color: var(--primary);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 16px;
 }
 
 .section-description {
   max-width: 60ch;
-  color: var(--muted);
   margin-bottom: 28px;
+  color: var(--muted);
 }
 
-/* 3. AKSESIBILITAS KEYBOARD */
+/* ACCESSIBILITY */
 .skip-link {
   position: absolute;
   top: 12px;
@@ -124,8 +124,8 @@ p {
   z-index: 100;
   max-width: calc(100% - 32px);
   padding: 12px 16px;
-  background: var(--surface);
   border: 2px solid var(--primary);
+  background-color: var(--surface);
   transform: translateY(-200%);
 }
 
@@ -133,11 +133,11 @@ p {
   transform: translateY(0);
 }
 
-/* 4. HEADER DAN NAVIGASI — FLEXBOX */
+/* HEADER AND NAVIGATION */
 .site-header {
-  padding-block: 20px;
-  background: var(--surface);
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
 }
 
 .navigation {
@@ -148,10 +148,10 @@ p {
 }
 
 .brand {
+  color: var(--text);
   font-family: var(--font-heading);
   font-size: 1.65rem;
   font-style: italic;
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -172,12 +172,12 @@ p {
   align-items: center;
   min-height: 44px;
   padding: 8px 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  text-decoration: none;
   color: var(--text);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav-links a:hover {
@@ -185,7 +185,7 @@ p {
   text-decoration: underline;
 }
 
-/* 5. HERO — GRID */
+/* HERO */
 .hero {
   background: linear-gradient(
     120deg,
@@ -224,7 +224,7 @@ p {
   margin-top: 28px;
 }
 
-/* 6. TOMBOL */
+/* BUTTONS */
 .button {
   display: inline-flex;
   align-items: center;
@@ -235,33 +235,35 @@ p {
   border: 1px solid var(--primary);
   border-radius: 999px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .button-primary {
-  background: var(--primary);
   color: #ffffff;
+  background-color: var(--primary);
 }
 
 .button-primary:hover {
-  background: var(--primary-dark);
-  border-color: var(--primary-dark);
   color: #ffffff;
+  background-color: var(--primary-dark);
 }
 
 .button-secondary {
-  background: var(--surface);
   color: var(--primary);
+  background-color: var(--surface);
 }
 
 .button-secondary:hover {
-  background: var(--blush);
+  color: var(--primary-dark);
+  background-color: var(--blush);
 }
 
-/* 7. FOTO PROFIL */
+/* PROFILE PHOTO */
 .hero-portrait {
   width: 100%;
   max-width: 480px;
@@ -274,85 +276,59 @@ p {
   object-fit: cover;
   object-position: center;
   border-radius: 160px 160px 12px 12px;
-  background: var(--blush);
+  background-color: var(--blush);
 }
 
 .hero-portrait figcaption {
   margin-top: 14px;
+  color: var(--muted);
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-style: italic;
   text-align: center;
+}
+
+/* LEARNING JOURNEY */
+.intro-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+/* Span the entire hero grid */
+.hero-layout > .intro-card {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+  margin-top: 16px;
+  justify-self: stretch;
+}
+
+.intro-card h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
+}
+
+.intro-card p {
   color: var(--muted);
 }
 
-/* 8. GALERI PROYEK — GRID OTOMATIS */
-.project-grid,
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card,
-.skill-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.project-card {
-  border-top: 4px solid var(--rose);
-}
-
-.project-number {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.intro-card .eyebrow {
   color: var(--primary);
 }
 
-.project-card > p:not(.project-number),
-.skill-card > p:not(.skill-level) {
-  color: var(--muted);
+.intro-card ul {
+  padding-left: 20px;
 }
 
-/* Berlaku saat gambar proyek ditambahkan ke HTML */
-.project-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background: var(--cream);
+.intro-card li + li {
+  margin-top: 8px;
 }
 
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.project-card .tag-list {
-  margin-top: auto;
-  padding-top: 20px;
-}
-
-.tag-list li {
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: var(--cream);
-  color: var(--primary-dark);
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-/* 9. TENTANG SAYA */
+/* ABOUT */
 .about-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -370,16 +346,16 @@ p {
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--cream);
+  background-color: var(--cream);
 }
 
 .profile-details dt {
+  margin-bottom: 4px;
+  color: var(--primary);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 4px;
 }
 
 .profile-details dd {
@@ -390,73 +366,120 @@ p {
   margin-bottom: 0;
 }
 
-/* 10. ASIDE: INFORMASI PELENGKAP */
-.intro-card {
-  min-width: 0;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.intro-card h2 {
-  font-size: 1.75rem;
-}
-
-.intro-card p {
-  color: var(--muted);
-}
-
-.intro-card ul {
-  padding-left: 20px;
-}
-
-.intro-card li + li {
-  margin-top: 8px;
-}
-
-/* Jika aside diletakkan langsung sebelum penutup section */
 #tentang > .intro-card {
   width: calc(100% - 32px);
+  max-width: 1120px;
   margin: 32px auto 0;
 }
 
-/* Jika aside diletakkan di dalam container Tentang Saya */
 #tentang > .container > .intro-card {
   margin-top: 32px;
 }
 
-/* 11. KEAHLIAN DAN SERTIFIKASI */
+/* PROJECTS AND SKILLS GRID */
+.project-grid,
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(280px, 100%), 1fr)
+  );
+  gap: 1.5rem;
+}
+
+.project-card,
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.project-card {
+  border-top: 4px solid var(--rose);
+}
+
+.project-number {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-card p:not(.project-number),
+.skill-card p:not(.skill-level) {
+  color: var(--muted);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: var(--cream);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-card .tag-list {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.tag-list li {
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--primary-dark);
+  background-color: var(--cream);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* SKILLS SPACING */
 #keahlian {
-  background: var(--cream);
+  padding-top: 48px;
+  padding-bottom: 140px;
+  background-color: var(--cream);
 }
 
 .skill-card {
-  background: var(--background);
+  background-color: var(--background);
 }
 
-.skill-card .skill-level {
+.skill-level {
   margin-top: auto;
-  padding-top: 16px;
   margin-bottom: 0;
-  font-size: 0.85rem;
-  font-weight: 700;
+  padding-top: 16px;
   color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: bold;
 }
 
+/* CERTIFICATIONS */
 #sertifikasi {
-  background: var(--blush);
+  padding-top: 40px;
+  padding-bottom: 64px;
+  background-color: var(--blush);
 }
 
 #sertifikasi .container > p:last-child {
   max-width: 70ch;
   margin-bottom: 0;
+  color: var(--muted);
 }
 
-/* 12. KONTAK */
+/* CONTACT */
 #kontak {
-  background: var(--background);
+  background-color: var(--background);
 }
 
 .contact-content {
@@ -481,29 +504,35 @@ address {
   margin-top: 24px;
 }
 
+.contact-list li {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .contact-list a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
+  max-width: 100%;
   padding: 10px 24px;
   border: 1px solid var(--primary);
   border-radius: 999px;
+  background-color: var(--surface);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: bold;
   text-decoration: none;
-  background: var(--surface);
 }
 
 .contact-list a:hover {
-  background: var(--cream);
+  background-color: var(--cream);
 }
 
-/* 13. FOOTER */
+/* FOOTER */
 .site-footer {
-  padding-block: 24px;
-  background: var(--primary-dark);
-  color: #fffaf6;
+  padding: 24px 0;
+  color: #ffffff;
+  background-color: var(--primary-dark);
 }
 
 .footer-content {
@@ -514,37 +543,41 @@ address {
   font-size: 0.8rem;
 }
 
-.site-footer p {
+.footer-content p {
   margin-bottom: 0;
 }
 
-.site-footer a {
+.footer-content a {
   display: inline-block;
-  padding-block: 8px;
-  color: #fffaf6;
+  padding: 8px 0;
+  color: #ffffff;
 }
 
-.site-footer a:focus-visible {
-  outline-color: #fffaf6;
+.footer-content a:focus-visible {
+  outline-color: #ffffff;
 }
 
-/* 14. TABLET: MULAI 768 PX */
+/* TABLET */
 @media (min-width: 768px) {
   .container {
     width: calc(100% - 64px);
   }
 
   .section {
-    padding-block: 72px;
+    padding: 72px 0;
   }
 
   .hero-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
   }
 
   .hero-portrait {
     justify-self: end;
+  }
+
+  .hero-layout > .intro-card {
+    padding: 32px;
   }
 
   .about-layout {
@@ -556,23 +589,24 @@ address {
     width: calc(100% - 64px);
   }
 
+  #keahlian {
+    padding-top: 56px;
+    padding-bottom: 96px;
+  }
+
   .footer-content {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 }
 
-/* 15. DESKTOP: MULAI 1024 PX */
+/* DESKTOP */
 @media (min-width: 1024px) {
-  .container {
-    max-width: 1120px;
-  }
-
   .navigation {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 24px;
   }
 
@@ -581,14 +615,14 @@ address {
   }
 
   .section {
-    padding-block: 88px;
+    padding: 88px 0;
   }
 
   .hero-layout {
-    gap: 64px;
+    column-gap: 64px;
+    row-gap: 48px;
   }
 
-  /* Judul proyek di kiri, galeri kartu di kanan */
   #proyek > .container {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
@@ -616,13 +650,9 @@ address {
     grid-row: 1 / 5;
     min-width: 0;
   }
-
-  #tentang > .intro-card {
-    max-width: 1120px;
-  }
 }
 
-/* 16. HORMATI PREFERENSI PENGURANGAN GERAK */
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
