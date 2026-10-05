@@ -1,0 +1,249 @@
+*,*::before,*::after {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background:#faf9f7;
+    --surface:#ffffff;
+    --surface-alt:#ffefec;
+    --text:#251205;
+    --muted:#d9f7ff;
+    --primary:#ffdbda;
+    --primary-dark:#db7f8e;
+    --border:#d5c5c8;
+    --radius:16px;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height:1.7;
+    color: var(--text);
+    background-color: var--(background);
+    overflow-wrap: anywhere;
+}
+img {
+    dispay:block;
+    max-width: 100%;
+    height: auto;
+}
+a{
+    color: var(--primary);
+    text-underline-offset:4px;
+}
+a::hover {
+    color: var(--primary-dark);
+}
+a:focus-visible {
+    outline:3px solid var(--primary);
+    outline-offset: 5px;
+}
+h1,
+h2,
+h3{ 
+    line-height:1.25;
+}
+h1 {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+p {
+    margin-bootom:16px;
+}
+.container {
+    width: calc(100%-32px);
+    margin-inline: auto;
+}
+.section {
+    padding-block:56px;
+}
+.section-alt {
+    background-color: var(--surface-alt);
+}
+.section-description {
+    max-width:65ch;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12 px;
+}
+/* Tautan bantuan untuk pengguna keyboard */
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 16px;
+  background-color: var(--surface);
+  border: 2px solid var(--primary);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Kepala halaman dan navigasi */
+.site-header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-block: 20px;
+}
+
+.brand {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links,
+.tag-list,
+.contact-list {
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Bagian perkenalan */
+.hero {
+  background-color: var(--surface-alt);
+}
+
+.hero-description {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #ffffff;
+}
+
+.button-secondary {
+  background-color: var(--surface);
+  color: var(--primary);
+}
+
+.button-secondary:hover {
+  background-color: var(--surface-alt);
+}
+
+/* Kartu informasi, proyek, dan keahlian */
+.intro-card,
+.project-card,
+.skill-card,
+.profile-details {
+  min-width: 0;
+  padding: 24px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.intro-card ul {
+  padding-left: 20px;
+}
+
+.intro-card li {
+  margin-bottom: 8px;
+}
+
+.project-number {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.tag-list li {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: var(--surface-alt);
+  color: var(--primary-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.skill-level {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Detail profil */
+.profile-details dt {
+  font-weight: 700;
+}
+
+.profile-details dd {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.profile-details dd:last-child {
+  margin-bottom: 0;
+}
+
+/* Kontak dan penutup */
+address {
+  font-style: normal;
+}
+
+.contact-list a {
+  display: inline-block;
+  padding-block: 10px;
+  font-weight: 700;
+}
+
+.site-footer {
+  padding-block: 24px;
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
